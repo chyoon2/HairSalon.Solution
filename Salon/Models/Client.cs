@@ -9,7 +9,6 @@ namespace Salon.Models
     public string Name{get; set;}
     public int Phone{get; set;}
     public Date MemberSince{get; set;}
-    
     public virtual Stylist Stylist {get; set;}
   }
 }
