@@ -6,7 +6,7 @@ using Salon.Models;
 using System.Linq;
 using System;
 
-namespace Salon.Models
+namespace Salon.Controllers
 {
   public class StylistsController : Controller
   {
@@ -23,10 +23,6 @@ namespace Salon.Models
       return View(model);
     }
 
-    public ActionResult Show(int id)
-    {
-      Stylist thisStylist = _db.Stylists.Include(Stylists => Stylists.Clients).FirstOrDefault(Stylists => Stylists.StylistId == id);
-      return View(thisStylist);
-    }
+    
   }
 }
