@@ -5,14 +5,15 @@
 @model List<Salon.Models.Client>
 @using Salon.Models
 
-<h1>Restaurants</h1>
+<h1>Clients:</h1>
 <br>
 @if (Model.Count == 0)
 {
   <p>No restaurants have been added</p>
 }
-
+<ol>
 @foreach (Client client in Model)
 {
   <li>@Html.ActionLink($"{@client.Name}", "Show", new{id = client.ClientId}) | @client.Stylist.Name</li>
 }
+<ol>
