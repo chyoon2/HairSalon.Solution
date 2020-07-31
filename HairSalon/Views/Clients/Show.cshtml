@@ -5,11 +5,11 @@
 
 <h1>Client Details:</h1>
 
-<h4>@Html.DisplayFor(model => model.Name)
-@Html.DisplayFor(model => model.Phone)
-@Html.DisplayFor(model => model.MemberSince)
-@Html.DisplayNameFor(model => model.Stylist): @Html.ActionLink($"{Model.Stylist.Name}", "Show", "Stylists", new{id = Model.StylistId})</h4>
+<h4>@Html.DisplayFor(model => model.Name)</h4>
+<h4>@Html.DisplayFor(model => model.Phone)</h4>
+<h4>@Html.DisplayFor(model => model.MemberSince)</h4>
+<h4>@Html.DisplayNameFor(model => model.Stylist): @Html.ActionLink($"{Model.Stylist.Name}", "Show", "Stylists", new{id = Model.StylistId})</h4>
 
-<p>@Html.ActionLink("Delete this Client","Delete") 
+<p>@Html.ActionLink("Delete this Stylist","Delete", new {id = Model.ClientId})
 || @Html.ActionLink("Back to Clients", "Index") ||
 @Html.ActionLink("Home", "Index", "Home")</p>

@@ -9,7 +9,7 @@
 <ul>
 @if (@Model.Clients.Count == 0)
 {
-  <p>no items found</p>
+  <p>no Clients found</p>
 }
 @foreach (Client client in @Model.Clients)
 {
@@ -18,4 +18,4 @@
 </ul>
 <p>@Html.ActionLink("Back to Stylist", "Index")</p>
 <p>@Html.ActionLink("Home", "Index", "Home")</p>
-<p>@Html.ActionLink("Delete this Client","Delete")</p>
+<p>@Html.ActionLink("Delete this Stylist","Delete", new {id = Model.StylistId})</p>
