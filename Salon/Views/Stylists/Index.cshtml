@@ -8,17 +8,12 @@
 {
   <h4>There are no Stylists</h4>
 }
-<ul>
+<ol>
 @foreach (Stylist stylist in Model)
 {
   <li>@Html.ActionLink($"{stylist.Name}", "Show", new { id = stylist.StylistId})</li>
 }
-</ul>
-  
+</ol>
 <p>@Html.ActionLink("Home", "Index", "Home")</p>
-
-}
-</ul>
-
-@Html.ActionLink("Home", "Index", "Home")
+<p>@Html.ActionLink("Back to list of stylist", "Index")</p>
 
