@@ -35,6 +35,7 @@ namespace Salon.Controllers
       "Name");
       return View();
     }
+
     [HttpPost]
     public ActionResult Create(Client client)
     {
@@ -49,6 +50,7 @@ namespace Salon.Controllers
       ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name");
       return View(thisClient);
     }
+
     [HttpPost]
     public ActionResult Edit(Client client)
     {
@@ -62,6 +64,7 @@ namespace Salon.Controllers
       Client thisClient = _db.Clients.FirstOrDefault(Clients => Clients.ClientId == id);
       return View(thisClient);
     }
+    
     [HttpPost, ActionName("Delete")]
     public ActionResult DeleteConfirmed(int id)
     {
