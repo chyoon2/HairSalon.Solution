@@ -1,4 +1,4 @@
-{
+@{
   Layout = "_Layout";
 }
 @model Salon.Models.Client
@@ -15,7 +15,7 @@
   @Html.TextBoxFor(model => model.Phone, new{ @class = "form-control"})
 
   <h4>@Html.LabelFor(model => model.MemberSince)</h4>
-  @Html.TextBoxFor(model => model.Rating, new{ @class = "form-control"})
+  @Html.TextBoxFor(model => model.MemberSince, new{ @class = "form-control"})
 
   <h4>Stylist</h4>@Html.DropDownList("Stylist")
   <input type="submit" value="Add new Stylist" class="btn btn-default" />
