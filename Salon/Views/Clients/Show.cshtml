@@ -5,8 +5,7 @@
 
 <h1>Client Details:</h1>
 
-
-@Html.DisplayFor(modl=>model.Name)
-@Html.DisplayFor(model=>model.Phone)
-@Html.DisplayFor(model=>model.MemberSince)
-@Html.DisplayNameFor(model=>model.Stylist): @Html.ActionLink($"{Model.Stylist.Name}", "Show", "Stylists", new{id = Model.StylistId})
+@Html.DisplayFor(model => model.Name)
+@Html.DisplayFor(model => model.Phone)
+@Html.DisplayFor(model => model.MemberSince)
+@Html.DisplayNameFor(model => model.Stylist): @Html.ActionLink($"{Model.Stylist.Name}", "Show", "Stylists", new{id = Model.StylistId})
