@@ -9,3 +9,7 @@
 @Html.DisplayFor(model => model.Phone)
 @Html.DisplayFor(model => model.MemberSince)
 @Html.DisplayNameFor(model => model.Stylist): @Html.ActionLink($"{Model.Stylist.Name}", "Show", "Stylists", new{id = Model.StylistId})</h4>
+
+<p>@Html.ActionLink("Delete this Client","Delete") 
+|| @Html.ActionLink("Back to Clients", "Index") ||
+@Html.ActionLink("Home", "Index", "Home")</p>

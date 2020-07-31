@@ -37,8 +37,9 @@ namespace Salon.Controllers
     {
       _db.Stylists.Add(stylist);
       _db.SaveChanges();
-      return View("Index");
+      return RedirectToAction("Index");
     }
+    
     public ActionResult Edit(int id)
     {
       Stylist thisStylist = _db.Stylists.FirstOrDefault(Stylists => Stylists.StylistId == id);
