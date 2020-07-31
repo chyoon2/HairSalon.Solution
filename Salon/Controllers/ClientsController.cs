@@ -11,7 +11,7 @@ namespace Salon.Controllers
   public class ClientsController : Controller
   {
     private readonly SalonContext _db;
-    
+
     public ClientsController(SalonContext db)
     {
       _db = db;
@@ -22,5 +22,12 @@ namespace Salon.Controllers
       List<Client> model = _db.Clients.Include(Clients => Clients.Stylist).ToList();
       return View(model);
     }
+
+    public ActionResult Show(int id)
+    {
+      Client thisClient = _db.Clients.Include(Clients => Clients.Stylist).FirstOrDefault(Clients => Clients.ClientId == id);
+      return View(thisClient);
+    }
+    
   }
 }
