@@ -6,16 +6,19 @@
 <h1>Stylist Profile</h1>
 <h2>@Html.DisplayFor(model => model.Name)</h2>
 <h3>@Html.DisplayFor(model => model.DateOfHire)</h3>
-<ul>
+
 @if (@Model.Clients.Count == 0)
 {
   <p>no Clients found</p>
 }
+<ul>
 @foreach (Client client in @Model.Clients)
 {
-  <li><h4>@Html.ActionLink($"{client.Name}", "Show", new { id = client.ClientId})</h4></li>
+  <li><h4>@Html.ActionLink($"{client.Name}", "Show", "Clients", new { id = client.ClientId})</h4></li>
 }
 </ul>
-<p>@Html.ActionLink("Back to Stylist", "Index")</p>
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
-<p>@Html.ActionLink("Delete this Stylist","Delete", new {id = Model.StylistId})</p>
+<div class="bottom">
+<p>@Html.ActionLink("Back to Stylist", "Index") || @Html.ActionLink("Home", "Index", "Home") || </p>
+<p>@Html.ActionLink("Delete this Stylist", "Delete", new { id = Model.StylistId }) || 
+@Html.ActionLink("Edit Stylist", "Edit", new { id = Model.StylistId })</p>
+</div>
