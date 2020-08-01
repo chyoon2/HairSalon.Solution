@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System;
 
-namespace Salon.Models
+namespace HairSalon.Models
 {
   public class Stylist
   {

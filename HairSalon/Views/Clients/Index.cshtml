@@ -2,8 +2,8 @@
   Layout = "_Layout";
 }
 
-@model List<Salon.Models.Client>
-@using Salon.Models
+@model List<HairSalon.Models.Client>
+@using HairSalon.Models
 
 <h1>Clients:</h1>
 <br>
@@ -18,6 +18,4 @@
 }
 </ul>
 
-<div class="bottom">
 <p>@Html.ActionLink("Add a Client", "Create") || @Html.ActionLink("Home", "Index", "Home")</p>
-</div>
