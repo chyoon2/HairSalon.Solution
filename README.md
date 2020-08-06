@@ -5,7 +5,6 @@
 ##### __Last Updated:__ 7/30/2020 
 ##### By _**Chris Yoon**_  
 
-
 ## Description
 
 _Keep track of your stylists and your clients with a click of a button. Save time with this program that organizes your busy by sorting clients with their respective stylists._
@@ -25,24 +24,25 @@ name and their Date of Hire | "Name: John, Date of Hire: June 1, 2020" | N/A |
 
 ## Setup/Installation Requirements
 
-##### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Configue MySQL Workbench Database:
+##### Configue MySQL Workbench Database:
 1. Launch MySQL Workbench
 2. Select "Create a new SQL tab for executing queries"
 ![NewQuery](./BestRestaurant/wwwroot/assets/images/readme/NewQuery.PNG)
 3. Enter the following SQL into the query window and click "execute"
 
 ```
-DROP DATABASE IF EXISTS chris_yoon;
-CREATE DATABASE chris_yoon;
-USE chris_yoon;
+DROP DATABASE IF EXISTS `chris_yoon`;
+CREATE DATABASE `chris_yoon`;
+USE `chris_yoon`;
+DROP TABLE IF EXISTS `clients`;
 CREATE TABLE `clients` (
   `ClientId` int NOT NULL AUTO_INCREMENT,
-  `Name` varchar(225) DEFAULT NULL,
-  `MemberSince` datetime DEFAULT NULL,
+  `Name` varchar(255) DEFAULT NULL,
   `Phone` int DEFAULT NULL,
-  `StylistId` int DEFAULT '0',
+  `MemberSince` datetime DEFAULT NULL,
+  `StylistId` int DEFAULT NULL,
   PRIMARY KEY (`ClientId`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 DROP TABLE IF EXISTS `stylists`;
 CREATE TABLE `stylists` (
@@ -50,13 +50,24 @@ CREATE TABLE `stylists` (
   `Name` varchar(255) DEFAULT NULL,
   `DateOfHire` datetime DEFAULT NULL,
   PRIMARY KEY (`StylistId`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 ```
+##### Configue MySQL Workbench Database:
+1. Create an 'appsettings.json' file in your root folder.
+2. Add the following code
+```
+{
+  "ConnectionStrings": {
+      "DefaultConnection": "Server=localhost;Port=3306;database=chris_yoon;uid=root;pwd=YOURPASSWORD"
+  }
+}
+```
+3. In the YOURPASSWORD, add your password, if you're with epicodus enter 'epicodus'.
 
 Open via Bash/GitBash:
 
 1. Clone this repository onto your computer:
-    "git clone https://github.com/Lackeyt/BestRestaurant.Solution"
+    "git clone https://github.com/chyoon2/HairSalon.Solution"
 2. Navigate into the "BestRestaurant" directory in Visual Studio Code or preferred text editor:
 3. Open the project
     "code ."
@@ -66,9 +77,11 @@ Open via Bash/GitBash:
 
 ## Known Bugs
 
-* no form input error handling
-* no limit on score (should be 0-10)
-* no null handling for certain form fields
+* _Your .sql database export file does not properly create database tables._
+* 8/5/2020: fixed bug. added new chris_yoon.sql data.
+
+* Gives no user error message when user tries to create a client when there is no stylist.
+* 8/5/2020: error fix still in progress.
 
 ## Feature Roadmap
 
