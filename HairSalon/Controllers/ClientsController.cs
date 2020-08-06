@@ -19,6 +19,13 @@ namespace HairSalon.Controllers
 
     public ActionResult Index()
     {
+      if(_db.Stylists.ToList().Count == 0)
+      {
+        ViewBag.Stylist= 0;
+      }
+      else{
+        ViewBag.Stylist= 1;
+      }
       List<Client> model = _db.Clients.Include(Clients => Clients.Stylist).ToList();
       return View(model);
     }
